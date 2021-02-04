@@ -11,6 +11,6 @@ const User = userModel(sequelize, Sequelize);
 
 sequelize.sync({force: false}).then(() => {
     console.log("Tablas sincronizadas");
-})
+});
 
 module.exports = {User};

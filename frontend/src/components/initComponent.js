@@ -33,6 +33,7 @@ function Initcomponent(props) {
     }
     const toggleButton = async (e) => {
         putOff();
+        fetchData();
         if (e.target.innerText === "Recargar") {
             setSection("recargar");
         }
@@ -97,6 +98,7 @@ function Initcomponent(props) {
             setReSuccess(false);
             setReError(true);
         }
+        fetchData();
     }
 
     const payerHandler = async (e) => {
@@ -105,6 +107,10 @@ function Initcomponent(props) {
         setPaIsLoading(true);
         const userData = JSON.parse(localStorage.getItem('userData'));
         const userMoney = userData.money;
+        const token = localStorage.getItem('token');
+        var caracteres = "abcdefghijkmnpqrtuvwxyzABCDEFGHJKMNPQRTUVWXYZ2346789";
+        var contrasenia = "";
+        for (let i=0; i<6; i++) contrasenia +=caracteres.charAt(Math.floor(Math.random()*caracteres.length)); 
         if(payQty > userMoney){
             setPaIsLoading(false);
             setPaSuccess(false);
@@ -120,7 +126,7 @@ function Initcomponent(props) {
                 money
             } = userData;
             money -= parseInt(payQty);
-            const {data} = await axios.put(`/api/users/lessMoney/${userData.id}`, {document, name, email, cellphone, password, money});
+            const {data} = await axios.put(`/api/users/lessMoney/${userData.id}/${token}/${contrasenia}`, {document, name, email, cellphone, password, money});
             if(data.code === 200){
                 setPaIsLoading(false);
                 setPaError(false);
@@ -132,6 +138,7 @@ function Initcomponent(props) {
                 setPaError(true);
             }
         }
+        fetchData();
     }
 
     return (
