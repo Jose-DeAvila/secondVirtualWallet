@@ -29,11 +29,11 @@
     margin: 10px 0;
 }
 
-form .email label, form .password label, form .document label, form .name label, form .cellphone label{
+form .email label, form .password label, form .document label, form .name label, form .cellphone label, form .quantity label{
     font-weight: 700;
 }
 
-form .email, form .password, form .document, form .name, form .cellphone {
+form .email, form .password, form .document, form .name, form .cellphone, form .quantity {
     margin: 10px 0;
 }
 

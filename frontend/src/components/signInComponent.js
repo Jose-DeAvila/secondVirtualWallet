@@ -21,6 +21,7 @@ function SignIn(props) {
             setLoading(false);
             setError(false);
             localStorage.setItem('userData', JSON.stringify(data.data));
+            localStorage.setItem('token', data.token);
             setSuccess(true);
             setTimeout(() => {
                 window.location.href = "/inicio";

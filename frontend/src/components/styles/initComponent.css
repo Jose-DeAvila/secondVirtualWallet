@@ -1,0 +1,186 @@
+.initComponent{
+    background-color: rgb(252, 252, 252);
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.bars{
+    width: 80px;
+    height: 80px;
+    background-color: rgb(132, 140, 255);
+    border-radius: 50%;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    cursor: pointer;
+    border: none;
+    transition: .4s ease all;
+    z-index: 99;
+}
+
+.secondButton, .thirdButton, .fourthButton, .fifthButton{
+    width: 60px;
+    height: 60px;
+    background-color: rgb(183, 167, 255);
+    border-radius: 50%;
+    border: none;
+    transition: .4s ease all;
+    position: absolute;
+    right: 35px;
+    top: 35px;
+    z-index: 2;
+    font-size: 2rem;
+    overflow: hidden;
+}
+
+.secondButton:hover, .thirdButton:hover, .fourthButton:hover, .fifthButton:hover{
+    background-color: rgb(132, 140, 255);
+}
+
+.secondButton.active{
+    width: 150px;
+    height: 65px;
+    border-radius: 15px;
+    transform: translateX(-80px);
+}
+
+.thirdButton.active{
+    transform: translateX(-250px);
+    width: 150px;
+    height: 65px;
+    border-radius: 15px;
+}
+
+.fourthButton.active{
+    transform: translateX(-410px);
+    width: 150px;
+    height: 65px;
+    border-radius: 15px;
+}
+
+.fifthButton.active{
+    transform: translateX(-570px);
+    width: 150px;
+    height: 65px;
+    border-radius: 15px;
+}
+
+.bars:hover{
+    background-color: rgb(102, 112, 255);
+}
+
+.bars.active{
+    transform: rotate(46deg);
+}
+
+.bars::after{
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 40%;
+    background-color: white;
+    left: 30%;
+    bottom: 50%;
+    transform: rotate(0deg);
+}
+
+.bars::before{
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 40%;
+    background-color: white;
+    left: 30%;
+    bottom: 50%;
+    transform: rotate(90deg);
+}
+
+.img-bg{
+    animation: 3s moving linear alternate infinite;
+    transform-origin: bottom;
+}
+
+.img-bg img{
+    width: 50%;
+}
+
+.text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: .3s ease all;
+    animation: letters 1s ease infinite alternate;
+}
+
+.recharge, .payer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recharge .form, .payer .form{
+    width: 100%;
+}
+
+.recharge .img, .payer .img{
+    width: 100%;
+}
+
+.recharge .img img, .payer .img img{
+    width: 100%;
+}
+
+@keyframes moving {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(5deg);
+    }
+}
+
+@keyframes letters {
+    from{
+        letter-spacing: 0px;
+    }
+    to{
+        letter-spacing: 1px;
+    }
+}
+
+@media only screen and (max-width: 610px){
+    .secondButton.active{
+        width: 110px;
+        height: 50px;
+        border-radius: 15px;
+        transform: translateY(80px);
+        font-size: 1.5rem;
+    }
+    
+    .thirdButton.active{
+        transform: translateY(140px);
+        width: 110px;
+        height: 50px;
+        border-radius: 15px;
+        font-size: 1.5rem;
+    }
+    
+    .fourthButton.active{
+        transform: translateY(200px);
+        width: 110px;
+        height: 50px;
+        border-radius: 15px;
+        font-size: 1.5rem;
+    }
+    .fifthButton.active{
+        transform: translateY(260px);
+        width: 110px;
+        height: 50px;
+        border-radius: 15px;
+        font-size: 1.5rem;
+    }
+}

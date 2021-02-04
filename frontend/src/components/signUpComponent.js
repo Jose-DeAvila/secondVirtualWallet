@@ -81,7 +81,7 @@ function SignUp(props) {
                         </div>
                     </div>
                     <div className="mb-3 row password">
-                        <label htmlFor="inputPassword" className="col-sm-2 col-form-label">Password</label>
+                        <label htmlFor="inputPassword" className="col-sm-2 col-form-label">Contraseña</label>
                         <div className="col-sm-10">
                             <input type="password" className="form-control" id="inputPassword" onChange={(e) => setPassword(e.target.value)} required={true}/>
                         </div>
