@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(132, 140, 255);
+    border-radius: 10px;
+  }
+
+.container{
+    overflow-y: hidden;
+}
+
+.signin__button{
+    margin: 10px 0;
+}
+
+form .email label, form .password label, form .document label, form .name label, form .cellphone label{
+    font-weight: 700;
+}
+
+form .email, form .password, form .document, form .name, form .cellphone {
+    margin: 10px 0;
+}
+
+.btn__register{
+    margin: 10px 0;
+}
+
+.errorMessag{
+    color: red;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.successMessag{
+    color: green;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+@media only screen and (max-width: 576px){
+    .container{
+        overflow-y: scroll;
+    }
+}
