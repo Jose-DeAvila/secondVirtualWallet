@@ -2,7 +2,7 @@ const { Model } = require('sequelize');
 const Sequelize = require('sequelize');
 const userModel = require('./models/users');
 
-const sequelize = new Sequelize('virtualwallet', 'root', '26930470', {
+const sequelize = new Sequelize('virtualwallet', 'root', '', {
     host: 'localhost',
     dialect: 'mysql'
 });

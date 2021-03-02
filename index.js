@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const apiRouter = require('./routes/api');
 
 const app = express();
-
+const PORT = process.env.PORT || 5000;
 require('./db');
 
 app.use(bodyParser.json());
@@ -11,6 +11,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use("/api", apiRouter);
 
-app.listen(5000, () => {
-    console.log(`Server running in port ${5000}`);
+app.listen(PORT, () => {
+    console.log(`Server running in port ${PORT}`);
 });

@@ -42,6 +42,7 @@ function Initcomponent(props) {
         }
         else if (e.target.innerText === "Salir") {
             localStorage.removeItem('userData');
+            localStorage.removeItem('token');
             window.location.href = "/";
         }
         else if (e.target.innerText === "Consultar") {
@@ -171,8 +172,8 @@ function Initcomponent(props) {
                             <button className="btn btn-info btn-lg" disabled={paIsLoading && true}>{paIsLoading ? "Cargando..." : "Recargar"} </button>
                         </form>
                         <div className="info">
-                            {paSuccess && <div className="successMessag">Balance agregado correctamente</div> }
-                            {paError && <div className="errorMessag">El balance no se agregó correctamente</div> }
+                            {paSuccess && <div className="successMessag">Pago realizado correctamente</div> }
+                            {paError && <div className="errorMessag">El pago no se realizó correctamente</div> }
                         </div>
                     </div>
                     <div className="img">
@@ -218,7 +219,7 @@ function Initcomponent(props) {
                 {section === "consultar" &&
                     <div className="consult">
                         <h1>Saldo actual: </h1>
-                        <h2>{JSON.parse(localStorage.getItem('userData')).money}</h2>
+                        <h2>{ JSON.parse(localStorage.getItem('userData')).money ? JSON.parse(localStorage.getItem('userData')).money : "0"}</h2>
                     </div>
                 }
             </div>
